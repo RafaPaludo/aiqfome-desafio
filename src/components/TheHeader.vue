@@ -14,16 +14,14 @@
       </div>
     </div>
 
-
-    
     <label for="" class="search-label">
       <input type="text" placeholder="busque pela loja ou culinária" class="search-bar">
     </label>
 
-    <button class="btn btn-user">
+    <TheButton>
       <img :src="User" alt="Ícone de Usuário">
       entrar
-    </button>
+    </TheButton>
   </header>
 </template>
 
@@ -31,6 +29,7 @@
 import AiqLogo from '@/assets/imgs/aiq-logo.png'
 import Location from '@/assets/imgs/location-icon.png'
 import User from '@/assets/imgs/user-icon.png'
+import TheButton from './TheButton.vue'
 </script>
 
 <style lang="scss">
@@ -53,8 +52,6 @@ import User from '@/assets/imgs/user-icon.png'
 
 .address {
   color: var(--color-secondary);
-  font-size: $font-size;
-  font-weight: $font-weight;
   display: flex;
   align-items: center;
   gap: 1rem;
