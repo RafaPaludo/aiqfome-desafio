@@ -17,8 +17,18 @@ export const useCartStore = defineStore('cart', () => {
 
     if (productIdx > -1) {
       items.value[productIdx] = { ...items.value[productIdx], ...args   }
+      console.log(`Produto id: ${id}, [${args}] alterado com sucesso!`)
     } else {
       addItem({ ...args })
+    }
+  }
+
+  function updateQuantity ({ id, qty }) {
+    const productIdx = items.value.findIndex(item => item.id === id)
+
+    if (productIdx > -1) {
+      items.value[productIdx].qty = qty
+      console.log(`Produto id: ${id} removido com sucesso!`)
     }
   }
 
@@ -27,6 +37,7 @@ export const useCartStore = defineStore('cart', () => {
     
     if (id, price, qty) {
       items.value.push({ ...args })
+      console.log(`Produto id: ${id}, price: ${price}, qty: ${qty} adicionado com sucesso!`)
     }
   }
 
@@ -34,9 +45,10 @@ export const useCartStore = defineStore('cart', () => {
     const productIdx = items.value.findIndex(item => item.id === id)
 
     if (productIdx > -1) {
-      items.value.pop(id)
+      items.value.splice(productIdx, 1)
+      console.log(`Produto id: ${id} removido com sucesso!`)
     }
   }
 
-  return { items, total, addItem, removeItem, updateItem}
+  return { items, total, addItem, removeItem, updateItem, updateQuantity }
 })

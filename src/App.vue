@@ -1,22 +1,22 @@
 <template>
-  <TheContainer bgColor="#7B1FA2">
-    <TheHeader />
-  </TheContainer>
+  <AiqContainer bgColor="#7B1FA2">
+    <AiqHeader />
+  </AiqContainer>
 
-  <TheContainer>
-    <TheStore/>
-  </TheContainer>
+  <AiqContainer>
+    <AiqStore/>
+  </AiqContainer>
 
-  <TheContainer bgColor="#EEF0F5">
-    <TheFooter />
-  </TheContainer>
+  <AiqContainer bgColor="#EEF0F5">
+    <AiqFooter />
+  </AiqContainer>
 </template>
 
 <script setup>
-import TheHeader from '@/components/TheHeader.vue'
-import TheContainer from '@/components/TheContainer.vue';
-import TheFooter from '@/components/TheFooter.vue';
-import TheStore from './components/TheStore.vue';
+import AiqHeader from '@/layout/AiqHeader.vue'
+import AiqFooter from '@/layout/AiqFooter.vue';
+import AiqContainer from '@/ui/AiqContainer.vue';
+import AiqStore from './components/AiqStore.vue';
 </script>
 
 <style lang="scss">
