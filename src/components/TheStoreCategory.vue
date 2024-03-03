@@ -24,7 +24,7 @@
     </div>
 
     <!-- Checkbox -->
-    <!-- <div
+    <div
      class="category__type"
      v-if="category.type === 'checkbox'" 
     > 
@@ -32,10 +32,10 @@
         :required="category.required"
         :categoryType="category.options"
       />
-    </div> -->
+    </div>
 
     <!-- Counter -->
-    <!-- <div
+    <div
      class="category__type"
      v-if="category.type === 'counter'" 
     > 
@@ -43,7 +43,7 @@
         :required="category.required"
         :categoryType="category.options"
       />
-    </div> -->
+    </div>
   </section>
 </template>
 

@@ -101,7 +101,8 @@ const categories = ref([
       {
         id: 4,
         name: 'cutlery',
-        label: 'hashi'
+        label: 'hashi',
+        price: 0
       },
       {
         id: 4,
