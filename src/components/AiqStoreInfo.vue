@@ -13,7 +13,6 @@ const props = defineProps({
 
 <style lang="scss">
 .store__info {
-  padding: 2.4rem 0; 
   font-size: 2.4rem;
   font-weight: 700;
   color: #202326;

@@ -6,10 +6,13 @@
       </div>
   
       <div class="address">
-        <img :src="Location" alt="Ícone de localização">
+        <img :src="Location" alt="Ícone de localização" class="address__icon">
         <div class="address__text">
           entregando em
-          <span>Rua Mandaguar, 198 ></span>
+          <span>
+            Rua Mandaguar, 198
+            <img :src="Arrow" alt=">" width="16" height="17"/>
+          </span>
         </div>
       </div>
     </div>
@@ -18,10 +21,10 @@
       <input type="text" placeholder="busque pela loja ou culinária" class="search-bar">
     </label>
 
-    <TheButton>
+    <AiqButton>
       <img :src="User" alt="Ícone de Usuário">
       entrar
-    </TheButton>
+    </AiqButton>
   </header>
 </template>
 
@@ -29,7 +32,8 @@
 import AiqLogo from '@/assets/imgs/aiq-logo.png'
 import Location from '@/assets/imgs/location-icon.png'
 import User from '@/assets/imgs/user-icon.png'
-import TheButton from './TheButton.vue'
+import Arrow from '@/assets/imgs/arrow-icon.png'
+import AiqButton from '@/ui/AiqButton.vue'
 </script>
 
 <style lang="scss">
@@ -59,9 +63,12 @@ import TheButton from './TheButton.vue'
   span {
     color: var(--white);
     font-size: 1.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
   }
 
-  img {
+  &__icon {
     width: 2.4rem;
     height: 2.4rem;
   }

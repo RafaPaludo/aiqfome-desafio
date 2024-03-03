@@ -19,6 +19,7 @@ const currentYear = new Date().getFullYear()
 
   &__info {
     font-size: 1.8rem;
+    margin-top: .8rem;
   }
 }
 </style>

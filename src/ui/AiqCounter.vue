@@ -1,5 +1,5 @@
 <template>
-  <div class="counter"  :class="size">
+  <div class="counter" :class="size">
     <button
       class="counter__remove"
       :class="[ disabledClass, variantTrash ]"
@@ -10,7 +10,7 @@
       class="counter__number"
       type="number"
       min="0"
-      v-model="counter"
+      v-model="model"
       disabled
     >
 
@@ -24,35 +24,26 @@
 <script setup>
 import { computed, ref } from 'vue'
 
+const model = defineModel()
+
 // Props
 const props = defineProps({
-  counterValue: Number,
-  default: 0,
-  required: true,
   variant: String,
   size: String
 })
 
-// Data
-const counter = ref(props.counterValue || 0)
-
 // Computed
-const disabledClass = computed(() => counter.value ? '' : 'counter__remove--disabled')
-const variantTrash = computed(() => counter.value === 1 && props.variant === 'trash' ? 'counter__remove--trash' : '')
-
-// Emits
-const emit = defineEmits(['addToCart', 'removeToCart'])
+const disabledClass = computed(() => model.value ? '' : 'counter__remove--disabled')
+const variantTrash = computed(() => model.value === 1 && props.variant === 'trash' ? 'counter__remove--trash' : '')
 
 // Functions
 function add () {
-  counter.value++
-  emit('addToCart', counter.value)
+  model.value++
 }
 
 function remove () {
-  if (counter.value) {
-    counter.value--
-    emit('removeToCart', counter.value)
+  if (model.value) {
+    model.value--
   }
 }
 </script>
