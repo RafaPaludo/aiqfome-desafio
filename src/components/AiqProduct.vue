@@ -14,7 +14,7 @@
         </div>
         <div class="store__quantity--actions">
           <AiqButton
-            class="btn--add"
+            variant="add"
             @click="addProduct"
             v-if="!prductAdd"
           >
@@ -124,7 +124,19 @@ function addProduct () {
 .store__item {
   padding: 4.8rem 2.4rem;
   display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.store__img {
+  padding: 1rem 0;
+  flex-grow: 1;
+  max-width: 40rem;
+
+  img {
+    width: 100%;
+  }
 }
 
 .store__description {
@@ -158,8 +170,19 @@ function addProduct () {
   padding: .8rem 0;
 }
 
-.btn--add {
-  background-color: #6D6F73;
-  padding: 1.1rem 2.4rem;
+@media screen and (max-width: 900px) {
+  .store__item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .store__img {
+    flex-grow: 1;
+    max-width: none;
+  }
+  
+  .store__description {
+    flex-grow: 1;
+  }
 }
 </style>

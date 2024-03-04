@@ -137,16 +137,15 @@ const product = ref({
   padding: 2.4rem 0;
 }
 
-
-
 .group {
-  padding: 2.4rem 4.8rem;
+  padding: 2.4rem;
   border-bottom: .4rem solid #EEF0F5;
 
   &__content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 7.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    column-gap: 7.5rem;
+    row-gap: 3.5rem;
   }
 
   &__input {
@@ -155,6 +154,13 @@ const product = ref({
     justify-content: flex-start;
     gap: .8rem;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .group {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 </style>

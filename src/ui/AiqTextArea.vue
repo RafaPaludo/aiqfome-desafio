@@ -13,7 +13,8 @@ ex: tirar algum ingrediente, ponto do prato"
   padding: 1rem 1.2rem;
   border: 1px solid #CDD1D9;
   border-radius: .4rem;
-  width: 64.4rem;
+  max-width: 64.4rem;
+  width: 100%;
   margin: 2.4rem auto;
 }
 </style>

@@ -5,7 +5,7 @@
         <img :src="AiqLogo" alt="Aiqfome" class="logo__img">
       </div>
   
-      <div class="address">
+      <div class="address mobile-hidden">
         <img :src="Location" alt="Ícone de localização" class="address__icon">
         <div class="address__text">
           entregando em
@@ -17,14 +17,22 @@
       </div>
     </div>
 
-    <label for="" class="search-label">
+    <label class="search-label">
       <input type="text" placeholder="busque pela loja ou culinária" class="search-bar">
     </label>
+    
+    <div class="actions">
+      <AiqButton v-if="cart.total" variant="ticket">
+        <img :src="Ticket" alt="Ver ticket">
+        ver ticket
+      </AiqButton>
 
-    <AiqButton>
-      <img :src="User" alt="Ícone de Usuário">
-      entrar
-    </AiqButton>
+      <AiqButton variant="login">
+        <img :src="User" alt="Ícone de Usuário">
+        entrar
+      </AiqButton>
+    </div>
+
   </header>
 </template>
 
@@ -32,22 +40,31 @@
 import AiqLogo from '@/assets/imgs/aiq-logo.png'
 import Location from '@/assets/imgs/location-icon.png'
 import User from '@/assets/imgs/user-icon.png'
+import Ticket from '@/assets/imgs/ticket-icon.png'
 import Arrow from '@/assets/imgs/arrow-icon.png'
 import AiqButton from '@/ui/AiqButton.vue'
+import { useCartStore } from '@/stores/cartStore'
+
+// Stores
+const cart = useCartStore()
 </script>
 
 <style lang="scss">
+
 .header {
   background-color: var(--color-primary);
   padding: 2rem 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1.4rem;
 }
 
 .infos {
   display: flex;
   align-items: center;
   gap: 4rem;
+  margin-right: 8rem;
 }
 
 .logo {
@@ -79,6 +96,10 @@ import AiqButton from '@/ui/AiqButton.vue'
   }
 }
 
+.search-label {
+  margin-right: auto;
+}
+
 .search-bar {
   padding: .8rem .8rem .8rem 4.4rem;
   border-radius: .8rem;
@@ -94,17 +115,23 @@ import AiqButton from '@/ui/AiqButton.vue'
   background-position: 1.2rem 50%;
 }
 
-.btn {
-  cursor: pointer;
-  border-radius: .8rem;
-  padding: .6rem 1.6rem;
-  background-color: #00A296;
-  border: none;
-  color: var(--white);
-  font-size: 1.6rem;
-  font-weight: 700;
+.actions {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .header {
+    justify-content: center;
+  }
+
+  .search-label,
+  .infos {
+    margin: auto;
+  }
+
+  .search-bar {
+    min-width: 28rem;
+  }
 }
 </style>

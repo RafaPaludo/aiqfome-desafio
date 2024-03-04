@@ -17,6 +17,7 @@ const props = defineProps({
 
 <style lang="scss">
 .container {
+  padding: 0 2rem;
   & > *{
     max-width: 144rem;
     margin: 0 auto;
