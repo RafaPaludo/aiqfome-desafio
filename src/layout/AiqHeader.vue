@@ -22,7 +22,11 @@
     </label>
     
     <div class="actions">
-      <AiqButton v-if="cart.total" variant="ticket">
+      <AiqButton 
+        v-if="cart.total"
+        variant="ticket"
+        @click="modal.toggle"
+      >
         <img :src="Ticket" alt="Ver ticket">
         ver ticket
       </AiqButton>
@@ -44,9 +48,11 @@ import Ticket from '@/assets/imgs/ticket-icon.png'
 import Arrow from '@/assets/imgs/arrow-icon.png'
 import AiqButton from '@/ui/AiqButton.vue'
 import { useCartStore } from '@/stores/cartStore'
+import { useModalStore } from '@/stores/modalStore'
 
 // Stores
 const cart = useCartStore()
+const modal = useModalStore()
 </script>
 
 <style lang="scss">

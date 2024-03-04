@@ -3,6 +3,10 @@
     <AiqHeader />
   </AiqContainer>
 
+  <AiqContainer bgColor="#7B1FA2">
+    <AiqModal />
+  </AiqContainer>
+
   <AiqContainer>
     <AiqStore/>
   </AiqContainer>
@@ -14,6 +18,7 @@
 
 <script setup>
 import AiqHeader from '@/layout/AiqHeader.vue'
+import AiqModal from '@/components/AiqModal.vue'
 import AiqFooter from '@/layout/AiqFooter.vue';
 import AiqContainer from '@/ui/AiqContainer.vue';
 import AiqStore from './components/AiqStore.vue';
