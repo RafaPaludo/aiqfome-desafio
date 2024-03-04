@@ -38,10 +38,16 @@ const disabledClass = computed(() => model.value ? '' : 'counter__remove--disabl
 const variantTrash = computed(() => model.value === 1 && props.variant === 'trash' ? 'counter__remove--trash' : '')
 
 // Functions
+/**
+ * Increases the value of the model.
+ */
 function add () {
   model.value++
 }
 
+/**
+ * Decreases the value of the model.
+ */
 function remove () {
   if (model.value) {
     model.value--

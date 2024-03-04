@@ -1,4 +1,4 @@
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCartStore = defineStore('cart', () => {
@@ -11,33 +11,49 @@ export const useCartStore = defineStore('cart', () => {
     }, 0);
   })
 
+  /**
+   * Updates the item properties of the product in the cart.
+   * 
+   * @param {Object} item - The product item to be update 
+   */
   function updateItem ({ ...args }) {
     const { id } = { ... args }
     const productIdx = items.value.findIndex(item => item.id === id)
 
     if (productIdx > -1) {
       items.value[productIdx] = { ...items.value[productIdx], ...args   }
-      console.log(`Produto id: ${id}, [${args}] alterado com sucesso!`)
     } else {
       addItem({ ...args })
     }
   }
 
+  /**
+   * Adds the product to the cart.
+   * 
+   * @param {Object} item - The product item to be added 
+   * @param {number} item.id - The product id
+   * @param {number} item.price - The product price
+   * @param {number} item.qty - The product qty
+   */
   function addItem ({ ...args }) {
     const { id, price, qty } = { ...args }
     
     if (id, price, qty) {
       items.value.push({ ...args })
-      console.log(`Produto id: ${id}, price: ${price}, qty: ${qty} adicionado com sucesso!`)
     }
   }
 
+  /**
+   * Removes the product to the cart based on its id.
+   * 
+   * @param {Object} item - The product item to be added 
+   * @param {number} item.id - The product id 
+   */
   function removeItem ({ id }) {
     const productIdx = items.value.findIndex(item => item.id === id)
 
     if (productIdx > -1) {
       items.value.splice(productIdx, 1)
-      console.log(`Produto id: ${id} removido com sucesso!`)
     }
   }
 

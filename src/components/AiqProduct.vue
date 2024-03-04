@@ -35,11 +35,11 @@
   </div>
 
   <!-- Specs -->
-  <AiqGroupRadio :products="mainProduct.specs.products" :label="mainProduct.specs.label" />
+  <AiqGroupRadio :products="mainProduct.specs.products" :label="mainProduct.specs.label" ref="groupSpecs" />
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { priceString } from '@/utils'
 import { useCartStore } from '@/stores/cartStore'
 import AiqCart from '@/components/AiqCart.vue'
@@ -56,43 +56,80 @@ const props = defineProps({
   mainProduct: Object
 })
 
+// Data
 const productQty = ref(0)
 const prductAdd = ref(false)
+const groupSpecs = ref(null)
 
 // Watch
 watch(
   productQty,
-  handleQty
+  updateMainProductQty
 )
 
-// Function
-function handleQty (newQty) {
-  const id = props.mainProduct.id
-  const mainProduct = cart.items.find(item => item.id === id)
+watch(
+  cart.items,
+  syncMainProductInCart
+)
+
+// Functions
+/**
+ * It deals with the quantity of the main product.
+ * If the product already exists in the cart, the quantity will be updated. 
+ * If quantity is zero, removes the product from the cart.
+ * 
+ * @param {number} newQty
+ */
+function updateMainProductQty (newQty) {
+  const mainProduct = getMainProductInCart()
   
   if (mainProduct) {
     cart.updateItem({ ...mainProduct, qty: newQty })
 
     if (!newQty) {
       cart.removeItem({ ...mainProduct  })
+      groupSpecs.value.checked = null
       prductAdd.value = false
     }
   }
 }
 
+/**
+ * This function adds the first sku product to the cart and updates its quantity to 1.
+ */
 function addProduct () {
+  const mainProductInCart = getMainProductInCart()
+  const firstSpec = props?.mainProduct?.specs?.products[0] || null
+
+  if (mainProductInCart) {
+    return
+  }
+
+  groupSpecs.value.checked = firstSpec.sku || null
+  prductAdd.value = true
+  productQty.value = 1
+}
+
+/**
+ * Each time the cart is updated, it synchronizes the main product with its initial values.
+ */
+function syncMainProductInCart () {
+  const mainProduct = getMainProductInCart()
+
+  if (mainProduct) {
+    prductAdd.value = true
+    productQty.value = mainProduct.qty
+  }
+}
+
+/**
+ * Returns the main product if it is in the cart.
+ */
+function getMainProductInCart () {
   const id = props.mainProduct.id
   const mainProduct = cart.items.find(item => item.id === id)
 
-  if(!mainProduct) {
-    const firstSku = props.mainProduct.specs.products[0]
-    cart.updateItem({ ...firstSku, qty: 1 })
-  } else {
-    cart.updateItem({ ...mainProduct })
-  }
-  
-  prductAdd.value = true
-  productQty.value = 1
+  return ( mainProduct ? mainProduct : null )
 }
 </script>
 

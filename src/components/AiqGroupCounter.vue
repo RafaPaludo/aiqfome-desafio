@@ -35,6 +35,9 @@ watch(
 )
 
 // Function
+/**
+ * Adds or removes product from the cart based on the counter quantity.
+ */
 function updateCartItem () {
   const qty = counter.value
 

@@ -37,6 +37,9 @@ watch(
 )
 
 // Function
+/**
+ * Adds or removes product from the cart based on the checkbox value.
+ */
 function updateCartItem () {
   if (checked.value) {
     cart.updateItem({ ...props.product, qty:1 })

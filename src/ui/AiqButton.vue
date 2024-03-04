@@ -9,7 +9,7 @@
 const props = defineProps({
   variant: {
     type: String,
-    default: '',
+    default: 'add',
     validator(value) {
       // The value must match one of these strings
       return ['add', 'login', 'ticket'].includes(value)

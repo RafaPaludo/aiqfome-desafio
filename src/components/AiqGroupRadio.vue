@@ -49,19 +49,25 @@ watch(
 )
 
 // Function
+/**
+ * Adds or removes product from the cart based on the radio value.
+ * If the main product is in the cart, updates its quantity too.
+ */
 function updateCartItem () {
   const sku = checked.value
-  const product = props.products.find( product => product.sku === sku )
-  let qty
-
-  const mainProduct = cart.items.find(item => item.id === product.id)
-
-  if (mainProduct) {
-    qty = mainProduct.qty
-  } else {
-    qty = 1 
+  let product, isMainProduct, qty
+  
+  if (!sku) {
+    return
   }
+
+  product = props.products.find( product => product.sku === sku )
+  isMainProduct = cart.items.find(item => item.id === product.id)
+  isMainProduct ? qty = isMainProduct.qty : qty = 1 
 
   cart.updateItem( { ...product, qty })
 }
+
+// Expose checked ref to use in the parent component
+defineExpose({ checked })
 </script>

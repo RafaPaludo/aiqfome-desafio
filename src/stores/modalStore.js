@@ -4,15 +4,24 @@ import { defineStore } from 'pinia'
 export const useModalStore = defineStore('modal', () => {
   const status = ref(false)
 
-  function open(params) {
+  /**
+   * Opens the modal.
+   */
+  function open() {
     status.value = true 
   }
 
-  function close(params) {
+  /**
+   * Closes the modal.
+   */
+  function close() {
     status.value = false 
   }
 
-  function toggle(params) {
+  /**
+   * Toggle status of the modal.
+   */
+  function toggle() {
     status.value = !status.value
   }
 
