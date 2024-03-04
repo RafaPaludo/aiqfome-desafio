@@ -1,5 +1,10 @@
 # Desafio técnico Aiqfome
 
+![Preview](https://github.com/RafaPaludo/aiqfome-desafio/blob/master/.github/aiqfome.gif)
+
+<img src="https://github.com/RafaPaludo/aiqfome-desafio/blob/master/.github/aiqfome.gif" width="400" />
+
+
 Este é um desafio técnico que tem por finalidade testar minhas habilidades com programação frontend.
 
 O desafio consiste na criação de uma página de pedido de comida que exibe um produto principal e diversos complementos. É possível adicionar e remover produtos no carrinho de compras e ver em tempo real o carrinho ser atualizado conforme novos itens são adicionados, removidos ou alterados.
