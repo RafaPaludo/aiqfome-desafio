@@ -14,7 +14,7 @@ export const useCartStore = defineStore('cart', () => {
   /**
    * Updates the item properties of the product in the cart.
    * 
-   * @param {Object} item - The product item to be update 
+   * @param {object} item - The product item to be update 
    */
   function updateItem ({ ...args }) {
     const { id } = { ... args }
@@ -30,7 +30,7 @@ export const useCartStore = defineStore('cart', () => {
   /**
    * Adds the product to the cart.
    * 
-   * @param {Object} item - The product item to be added 
+   * @param {object} item - The product item to be added 
    * @param {number} item.id - The product id
    * @param {number} item.price - The product price
    * @param {number} item.qty - The product qty
@@ -46,7 +46,7 @@ export const useCartStore = defineStore('cart', () => {
   /**
    * Removes the product to the cart based on its id.
    * 
-   * @param {Object} item - The product item to be added 
+   * @param {object} item - The product item to be added 
    * @param {number} item.id - The product id 
    */
   function removeItem ({ id }) {

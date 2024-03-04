@@ -123,7 +123,9 @@ function syncMainProductInCart () {
 }
 
 /**
- * Returns the main product if it is in the cart.
+ * Get the main product if it is in the cart.
+ * 
+ * @returns {object | null}
  */
 function getMainProductInCart () {
   const id = props.mainProduct.id
