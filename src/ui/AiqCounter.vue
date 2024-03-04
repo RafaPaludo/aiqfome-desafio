@@ -29,8 +29,20 @@ const model = defineModel()
 
 // Props
 const props = defineProps({
-  variant: String,
-  size: String
+  variant: {
+    type: String,
+    validator(value) {
+      // The value must match one of these strings
+      return ['trash'].includes(value)
+    }
+  },
+  size: {
+    type: String,
+    validator(value) {
+      // The value must match one of these strings
+      return ['small', 'medium', 'large'].includes(value)
+    }
+  },
 })
 
 // Computed
