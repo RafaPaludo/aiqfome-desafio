@@ -27,12 +27,12 @@ const modal = useModalStore()
 .modal {
   padding: 5rem;
   border-radius: 0 0 4rem 4rem;
-  color: #FFF;
-  background-color: #7B1FA2;
+  color: var(--white);
+  background-color: var(--color-ui-secondary);
 
   &__header {
     font-size: 2.4rem;
-    color: #FFF;
+    color: var(--white);
     border-bottom: 1px solid #EEF0F5;
     margin-bottom: 1rem;
   }

@@ -14,13 +14,13 @@ const cart = useCartStore()
 
 <style lang="scss">
 .total {
-  color: #6D6F73;
+  color: var(--color-text-primary);
   font-size: 1.4rem;
   font-weight: 600;
 
   &__price {
     font-weight: 700;
-    color: #393A3C;
+    color: var(--color-text-secundary);
   }
 }
 </style>

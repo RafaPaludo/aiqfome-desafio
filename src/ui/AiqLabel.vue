@@ -62,7 +62,7 @@ const finalPrice = computed(() => {
   position: relative;
   display: flex;
   justify-content: space-between;
-  color: #6D6F73;
+  color: var(--color-text-primary);
   flex: 1;
   align-items: center;
   padding-left: 2.2rem;
@@ -74,7 +74,7 @@ const finalPrice = computed(() => {
 
   &__text {
     font-size: 1.4rem;
-    color: #6D6F73;
+    color: var(--color-text-primary);
     display: flex;
     align-items: center;
     gap: .4rem;
@@ -87,11 +87,11 @@ const finalPrice = computed(() => {
 
   &__price {
     font-size: 1.4rem;
-    color: #7B1FA2;
+    color: var(--color-ui-primary);
     margin-left: .4rem;
 
     &--discount {
-      color: #02A117;
+      color: var(--color-icon-discount);
     }
   }
 }
@@ -103,7 +103,7 @@ const finalPrice = computed(() => {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  border: 1px solid #6D6F73;
+  border: 1px solid var(--color-text-primary);
 
   &::after {
     content: "";

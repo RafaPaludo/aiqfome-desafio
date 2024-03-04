@@ -165,7 +165,7 @@ const product = ref({
 
       &:checked + label .checkmark {
         border: none;
-        background-color: #00A296;
+        background-color: var(--color-icon);
       }
     }
   }

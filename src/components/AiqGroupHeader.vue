@@ -28,18 +28,18 @@ const props = defineProps({
 
 .group__title {
   font-size: 1.6rem;
-  color: #202326;
+  color: var(--color-text-emphasis);
 }
 
 .group__subtitle {
   font-size: 1.2rem;
-  color: #6D6F73;
+  color: var(--color-text-primary);
 }
 
 .badge {
   cursor: default;
-  background-color: #393A3C;
-  color: #fff;
+  background-color: var(--color-text-secundary);
+  color: var(--white);
   padding: .6rem .8rem;
   border-radius: .4rem;
   font-weight: 700;

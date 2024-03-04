@@ -58,7 +58,7 @@ const modal = useModalStore()
 <style lang="scss">
 
 .header {
-  background-color: var(--color-primary);
+  background-color: var(--color-ui-primary);
   padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +78,7 @@ const modal = useModalStore()
 }
 
 .address {
-  color: var(--color-secondary);
+  color: var(--color-ui-secondary);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -111,7 +111,7 @@ const modal = useModalStore()
   border-radius: .8rem;
   border: 1px solid #CDD1D9;
   background-color: var(--white);
-  color: #6D6F73;
+  color: var(--color-text-primary);
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 1.9rem;

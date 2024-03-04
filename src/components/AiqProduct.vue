@@ -140,7 +140,7 @@ function addProduct () {
 }
 
 .store__description {
-  color: #6D6F73;
+  color: var(--color-text-primary);
   font-weight: 700;
   line-height: 3rem;
   display: flex;
@@ -149,12 +149,12 @@ function addProduct () {
   
   h3 {
     font-size: 2.4rem;
-    color: #393A3C;
+    color: var(--color-text-secundary);
   }
 
   .price {
     span {
-      color: #7B1FA2;
+      color: var(--color-ui-primary);
       font-weight: 800;
       font-size: 2rem;
     }
@@ -163,7 +163,7 @@ function addProduct () {
 
 .store__quantity {
   display: flex;
-  color: #393A3C;
+  color: var(--color-text-secundary);
   line-height: normal;
   justify-content: space-between;
   align-items: center;

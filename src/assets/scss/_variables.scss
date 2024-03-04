@@ -7,11 +7,31 @@
   --black: #000000;
   --white: #FFFFFF;
 
-  --color-primary: #7B1FA2;
-  --color-secondary: #EECFFC;
-
   // Fonts
   --font-default: 'Nunito', 'Roboto', 'Arial', 'sans-serif';
   --font-weight-default: 500;
   --font-size-default: 1.6rem;
+
+  // Color UI
+  --color-ui-primary: #7B1FA2;
+  --color-ui-secondary: #EECFFC;
+
+  // Color Layout
+  --color-footer-text: #580F78;
+
+  // Color Buttons
+  --color-button-ticket: #F8ECFE;
+  --color-button-add: #6D6F73;
+  --color-button-login: #00A296;
+  --color-button-disabled: #EEF0F5;
+  --color-button-text: #A8ADB7;
+
+  // Color Text
+  --color-text-primary: #6D6F73;
+  --color-text-secundary: #393A3C;
+  --color-text-emphasis: #202326;
+  
+  // Color Icons
+  --color-icon: #00A296;
+  --color-icon-discount: #02A117;
 }

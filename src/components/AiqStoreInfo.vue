@@ -15,7 +15,7 @@ const props = defineProps({
 .store__info {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #202326;
+  color: var(--color-text-emphasis);
   display: flex;
   gap: .8rem;
   align-items: center;

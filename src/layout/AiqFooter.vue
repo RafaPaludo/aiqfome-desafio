@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear()
 .footer {
   text-align: center;
   padding: 3.2rem;
-  color: #580F78;
+  color: var(--color-footer-text);
   font-weight: 700;
   font-size: 1.4rem;
 

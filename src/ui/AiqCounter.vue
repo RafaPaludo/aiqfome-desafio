@@ -59,9 +59,9 @@ function remove () {
   &__add,
   &__remove {
     cursor: pointer;
-    color: #00A296;
+    color: var(--color-icon);
     border-radius: 50%;
-    border: 1px solid #00A296;
+    border: 1px solid var(--color-icon);
     background-color: transparent;
     width: 2.4rem;
     height: 2.4rem;
@@ -83,9 +83,9 @@ function remove () {
 
   &__remove--disabled {
     cursor: auto;
-    background-color: #EEF0F5;
-    border-color: #EEF0F5;
-    color: #A8ADB7;
+    background-color: var(--color-button-disabled);
+    border-color: var(--color-button-disabled);
+    color: var(--color-button-text);
   }
 
   &__number {
@@ -93,7 +93,7 @@ function remove () {
     background-color: transparent;
     border: none;
     height: 100%;
-    color: #393A3C;
+    color: var(--color-darker-gray);
     font-size: 1.4rem;
     font-weight: 700;
     text-align: center;

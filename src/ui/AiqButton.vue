@@ -20,28 +20,28 @@ const props = defineProps({
 <style lang="scss">
 .btn {
   cursor: pointer;
-  border-radius: .8rem;
+  display: flex;
   padding: .6rem 1.6rem;
+  align-items: center;
+  gap: .8rem;
   border: none;
+  border-radius: .8rem;
   color: var(--white);
   font-size: 1.6rem;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 
   &--add {
-    background-color: #6D6F73;
+    background-color: var(--color-button-add);
     padding: 1.1rem 2.4rem;
   }
 
   &--login {
-    background-color: #00A296;
+    background-color: var(--color-button-login);
   }
 
   &--ticket {
-    background-color: #F8ECFE;
-    color: #7B1FA2;
+    background-color: var( --color-button-ticket);
+    color: var(--color-ui-primary);
   }
 }
 </style>
