@@ -1,4 +1,4 @@
-# Cnsiderações sobre o projeto
+# Considerações sobre o projeto
 
 Optei por desenvolver o projeto utilizando Vue 3 sem utilizar nenhuma biblioteca de componentes, pois como são poucas telas, entendi que criar os componentes do zero seria um modo de mostrar os meus conhecimentos no framework.
 
@@ -16,6 +16,8 @@ Considerei usar um único objeto com todas as informações necessárias para mo
 
 Para diferenciar os produtos utilizei o id. E para diferenciar especificações do mesmo produto utilizei skus.
 
+Consegui adicionar apenas alguns testes, por conta do pinia e da Composition API o modo de acessar as informações são diferentes de como estou acostumado, por isso acabei fazendo apenas alguns testes.
+
 ## Melhorias
 
 Ajustar o header do site no mobile, trocar para um menu hamburguer e mostrar os botões de perfil e ticket quando for clicado.
@@ -25,3 +27,5 @@ Trocar os ícones, trocando por ícones de alguma biblioteca, como FontAwesome, 
 Adicionar funcionalidade de compra do carrinho.
 
 Adicionar um aviso que é necessário adicionar o produto principal caso o usuário tente efetuar a compra sem ter adicionado o produto.
+
+Implementar maior cobertura de testes.
