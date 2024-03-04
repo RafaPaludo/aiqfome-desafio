@@ -1,57 +1,71 @@
-# desafio-ariqfome
+# Desafio técnico Aiqfome
 
-This template should help get you started developing with Vue 3 in Vite.
+Este é um desafio técnico que tem por finalidade testar minhas habilidades com programação frontend.
 
-## Recommended IDE Setup
+O desafio consiste na criação de uma página de pedido de comida que exibe um produto principal e diversos complementos. É possível adicionar e remover produtos no carrinho de compras e ver em tempo real o carrinho ser atualizado conforme novos itens são adicionados, removidos ou alterados.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Este projeto é composto por uma aplicação frontend utilizando Vue 3, Pinia para geranciamento de estado e Sass como preprocessador de CSS.
 
-## Customize configuration
+Você pode acessar a aplicação rodando [aqui](http://35.173.236.69:5000/) ou seguir com algum métido de instalação definido abaixo.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Escolha um método de instalação
+- [Instalação Local com Node.js](#instalação-local-com-nodejs)
+- [Instalação com Docker](#instalação-com-docker)
+- [Instalação com Docker Compose](#instalação-com-docker-compose)
 
-## Project Setup
+## Instalação Local com Node.js
 
-```sh
-npm install
-```
+Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo em [nodejs.org](https://nodejs.org/).
 
-### Compile and Hot-Reload for Development
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RafaPaludo/aiqfome-desafio.git
+   cd aiqfome-desafio
 
-```sh
-npm run dev
-```
+2. Instale as dependências:
+    ```bash
+     npm install
 
-### Compile and Minify for Production
+3. Inicie o servidor:
+     ```bash
+     npm run dev
 
-```sh
-npm run build
-```
+Você pode acessar a aplicação em http://localhost:5000.
 
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
+----
 
-```sh
-npm run test:unit:dev # or `npm run test:unit` for headless testing
-```
+## Instalação com Docker
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+Certifique-se de ter o Docker instalado em sua máquina. Você pode baixá-lo em [docker.com](https://www.docker.com/).
 
-```sh
-npm run test:e2e:dev
-```
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RafaPaludo/aiqfome-desafio.git
+   cd aiqfome-desafio
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+3. Faça o build da aplicação:
+    ```bash
+    docker build -t aiqfome-desafio .
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+4. Suba as duas imagens:
+    ```bash
+    docker run -d -it -p 5000:5000 aiqfome-desafio
 
-```sh
-npm run build
-npm run test:e2e
-```
+Você pode acessar a aplicação em http://localhost:5000.
 
-### Lint with [ESLint](https://eslint.org/)
+----
 
-```sh
-npm run lint
-```
+## Instalação com Docker Compose
+
+Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina. Você pode baixá-los em docker.com.
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RafaPaludo/aiqfome-desafio.git
+   cd aiqfome-desafio
+
+2. Execute o Docker Compose:
+   ```bash
+   docker compose up -d 
+   
+Você pode acessar a aplicação em http://localhost:5000.
