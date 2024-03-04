@@ -10,8 +10,7 @@
 <script setup>
 // Props
 const props = defineProps({
-  bgColor: String,
-  default: '#FFF'
+  bgColor: String
 })
 
 </script>

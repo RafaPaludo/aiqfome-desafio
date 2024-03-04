@@ -4,7 +4,7 @@
       <div class="store__header">
         <h3>{{ mainProduct.name }}</h3>
         <p class="price">a partir de <span>{{ priceString(mainProduct.price) }}</span></p>
-        <p>{{ mainProduct.description }}</p>
+        <p class="product__description">{{ mainProduct.description }}</p>
       </div>
 
       <div class="store__quantity">
@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { priceString } from '@/utils'
 import { useCartStore } from '@/stores/cartStore'
 import AiqCart from '@/components/AiqCart.vue'

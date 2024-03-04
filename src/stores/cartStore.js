@@ -1,5 +1,7 @@
 import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore, createPinia } from 'pinia'
+
+const pinia = createPinia();
 
 export const useCartStore = defineStore('cart', () => {
   const items = ref([])
@@ -59,3 +61,5 @@ export const useCartStore = defineStore('cart', () => {
 
   return { items, total, addItem, removeItem, updateItem }
 })
+
+export { pinia };
