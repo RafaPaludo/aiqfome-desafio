@@ -1,9 +1,10 @@
 # Desafio técnico Aiqfome
 
+## Preview
+
 ![Preview](https://github.com/RafaPaludo/aiqfome-desafio/blob/master/.github/aiqfome.gif)
 
-<img src="https://github.com/RafaPaludo/aiqfome-desafio/blob/master/.github/aiqfome.gif" width="400" />
-
+---
 
 Este é um desafio técnico que tem por finalidade testar minhas habilidades com programação frontend.
 
