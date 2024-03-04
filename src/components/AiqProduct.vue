@@ -35,7 +35,7 @@
   </div>
 
   <!-- Specs -->
-  <AiqGroupRadio :products="specs" :label="specsLabel" />
+  <AiqGroupRadio :products="specs.products" :label="specs.label" />
 </template>
 
 <script setup>
@@ -49,23 +49,30 @@ import AiqCounter from '@/ui/AiqCounter.vue';
 import StoreImg from '@/assets/imgs/store-img.png'
 
 // Data
-const specs = ref([
-  {
-    id: 70,
-    sku: 701,
-    name: 'size',
-    label: 'médio',
-    price: 19.90,
-    oldPrice: 22.90
-  },
-  {
-    id: 70,
-    sku: 702,
-    name: 'size',
-    label: 'grande',
-    price: 28.90
+const specs = ref({
+  products: [
+    {
+      id: 70,
+      sku: 701,
+      name: 'size',
+      label: 'médio',
+      price: 19.90,
+      oldPrice: 22.90
+    },
+    {
+      id: 70,
+      sku: 702,
+      name: 'size',
+      label: 'grande',
+      price: 28.90
+    }
+  ],
+  label: {
+    title: 'qual o tamanho?',
+    subtitle: 'escolha 1',
+    required: true,
   }
-])
+})
 
 const specsLabel = ref({
   title: 'qual o tamanho?',
@@ -110,7 +117,7 @@ function addProduct () {
   const mainProduct = cart.items.find(item => item.id === id)
 
   if(!mainProduct) {
-    const firstSku = specs.value[0]
+    const firstSku = specs.value.products[0]
     cart.updateItem({ ...firstSku, qty: 1 })
   } else {
     cart.updateItem({ ...mainProduct })

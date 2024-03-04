@@ -3,31 +3,39 @@
     <AiqStoreInfo :store="store" />
 
     <AiqProduct :product="product" />
-
-    <!-- Counter -->
-    <div class="group">
-      <AiqGroupHeader :label="counterLabel" />
-      <div class="group__content">
-        <AiqGroupCounter
-          v-for="product in counterProducts"
-          :product="product"
-          :key="product.sku"
-        />
+    
+    <div v-for="(value, key) in complementary">
+      <!-- Counter -->
+      <div
+        class="group"
+        v-if="value.type === 'counter'"
+      >
+        <AiqGroupHeader :label="value.label" />
+        <div class="group__content">
+          <AiqGroupCounter
+            v-for="product in value.products"
+            :product="product"
+            :key="product.sku"
+          />
+        </div>
       </div>
-    </div>
 
-    <!-- Radio -->
-    <AiqGroupRadio :products="radioProducts" :label="radioLabel" />
+      <!-- Radio -->
+      <AiqGroupRadio v-if="value.type === 'radio'" :products="value.products" :label="value.label" />
 
-    <!-- Checkbox -->
-    <div class="group">
-      <AiqGroupHeader :label="checkboxLabel" />
-      <div class="group__content">
-        <AiqGroupCheckbox
-          v-for="product in checkboxProducts"
-          :key="product.id"
-          :product="product"
-        />
+      <!-- Checkbox -->
+      <div 
+        class="group"
+        v-if="value.type === 'checkbox'"
+      >
+        <AiqGroupHeader :label="value.label" />
+        <div class="group__content">
+          <AiqGroupCheckbox
+            v-for="product in value.products"
+            :key="product.id"
+            :product="product"
+          />
+        </div>
       </div>
     </div>
 
@@ -46,77 +54,90 @@ import AiqGroupRadio from "@/components/AiqGroupRadio.vue"
 import AiqGroupCounter from "@/components/AiqGroupCounter.vue"
 import AiqGroupHeader from '@/components/AiqGroupHeader.vue'
 
-const checkboxProducts = ref([
-  {
-    id: 10,
-    sku: 101,
-    label: 'biscoito da sorte',
-    price: 2
-  },
-  {
-    id: 20,
-    sku: 201,
-    label: 'rolinho primavera',
-    price: 8
-  },
-])
-const checkboxLabel = ref({
-  title: 'mais alguma coisa?',
-  subtitle: 'escolha até 2',
-  required: false,
-})
+const checkbox = {
+  type: 'checkbox',
+  products: [
+    {
+      id: 10,
+      sku: 101,
+      label: 'biscoito da sorte',
+      price: 2
+    },
+    {
+      id: 20,
+      sku: 201,
+      label: 'rolinho primavera',
+      price: 8
+    },
+  ],
+  label: {
+    title: 'mais alguma coisa?',
+    subtitle: 'escolha até 2',
+    required: false,
+  }
+}
 
-const radioProducts = ref([
-  {
-    id: 30,
-    sku: 301,
-    name: 'cutlery',
-    label: 'hashi',
-    price: 0
-  },
-  {
-    id: 30,
-    sku: 302,
-    name: 'cutlery',
-    label: 'garfo e faca descartável',
-    price: 1
-  },
-])
+const radio = {
+  type: 'radio',
+  products: [
+    {
+      id: 30,
+      sku: 301,
+      name: 'cutlery',
+      label: 'hashi',
+      price: 0
+    },
+    {
+      id: 30,
+      sku: 302,
+      name: 'cutlery',
+      label: 'garfo e faca descartável',
+      price: 1
+    },
+  ],
+  label: {
+    title: 'precisa de talher?',
+    subtitle: 'escolha até 1',
+    required: false,
+  }
+}
 
-const radioLabel = ref({
-  title: 'precisa de talher?',
-  subtitle: 'escolha até 1',
-  required: false,
-})
+const counter = {
+  type: 'counter',
+  products: [
+    {
+      id: 40,
+      sku: 401,
+      name: 'beverage',
+      label: 'coca-cola',
+      price: 5
+    },
+    {
+      id: 50,
+      sku: 501,
+      name: 'beverage',
+      label: 'suco prats laranja',
+      price: 6
+    },
+    {
+      id: 60,
+      sku: 601,
+      name: 'beverage',
+      label: 'água sem gás',
+      price: 3
+    },
+  ],
+  label: {
+    title: 'vai querer bebida?',
+    subtitle: 'escolha quantos quiser',
+    required: false,
+  }
+}
 
-const counterProducts = ref([
-  {
-    id: 40,
-    sku: 401,
-    name: 'beverage',
-    label: 'coca-cola',
-    price: 5
-  },
-  {
-    id: 50,
-    sku: 501,
-    name: 'beverage',
-    label: 'suco prats laranja',
-    price: 6
-  },
-  {
-    id: 60,
-    sku: 601,
-    name: 'beverage',
-    label: 'água sem gás',
-    price: 3
-  },
-])
-
-const counterLabel = ref({
-  title: 'vai querer bebida?',
-  subtitle: 'escolha quantos quiser',
-  required: false,
+const complementary = ref({
+  counter,
+  radio,
+  checkbox,
 })
 
 const store = ref({

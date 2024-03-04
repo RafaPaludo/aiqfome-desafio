@@ -8,6 +8,7 @@
 </template>
 
 <script setup>
+// V-model
 const model = defineModel()
 // Props
 const props = defineProps({
