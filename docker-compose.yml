@@ -1,0 +1,7 @@
+version: '3'
+services:
+  aiqfome:
+    build: .
+    image: aiqfome
+    ports:
+      - 5000:5000
