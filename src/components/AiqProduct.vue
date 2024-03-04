@@ -2,9 +2,9 @@
   <div class="store__item">
     <div class="store__description">
       <div class="store__header">
-        <h3>{{ product.name }}</h3>
-        <p class="price">a partir de <span>{{ priceString(product.price) }}</span></p>
-        <p>{{ product.description }}</p>
+        <h3>{{ mainProduct.name }}</h3>
+        <p class="price">a partir de <span>{{ priceString(mainProduct.price) }}</span></p>
+        <p>{{ mainProduct.description }}</p>
       </div>
 
       <div class="store__quantity">
@@ -35,7 +35,7 @@
   </div>
 
   <!-- Specs -->
-  <AiqGroupRadio :products="specs.products" :label="specs.label" />
+  <AiqGroupRadio :products="mainProduct.specs.products" :label="mainProduct.specs.label" />
 </template>
 
 <script setup>
@@ -48,44 +48,12 @@ import AiqButton from "@/ui/AiqButton.vue"
 import AiqCounter from '@/ui/AiqCounter.vue';
 import StoreImg from '@/assets/imgs/store-img.png'
 
-// Data
-const specs = ref({
-  products: [
-    {
-      id: 70,
-      sku: 701,
-      name: 'size',
-      label: 'médio',
-      price: 19.90,
-      oldPrice: 22.90
-    },
-    {
-      id: 70,
-      sku: 702,
-      name: 'size',
-      label: 'grande',
-      price: 28.90
-    }
-  ],
-  label: {
-    title: 'qual o tamanho?',
-    subtitle: 'escolha 1',
-    required: true,
-  }
-})
-
-const specsLabel = ref({
-  title: 'qual o tamanho?',
-  subtitle: 'escolha 1',
-  required: true,
-})
-
 // Stores
 const cart = useCartStore()
 
 // Props
 const props = defineProps({
-  product: Object
+  mainProduct: Object
 })
 
 const productQty = ref(0)
@@ -99,7 +67,7 @@ watch(
 
 // Function
 function handleQty (newQty) {
-  const id = props.product.id
+  const id = props.mainProduct.id
   const mainProduct = cart.items.find(item => item.id === id)
   
   if (mainProduct) {
@@ -113,11 +81,11 @@ function handleQty (newQty) {
 }
 
 function addProduct () {
-  const id = props.product.id
+  const id = props.mainProduct.id
   const mainProduct = cart.items.find(item => item.id === id)
 
   if(!mainProduct) {
-    const firstSku = specs.value.products[0]
+    const firstSku = props.mainProduct.specs.products[0]
     cart.updateItem({ ...firstSku, qty: 1 })
   } else {
     cart.updateItem({ ...mainProduct })
