@@ -1,6 +1,6 @@
 <template>
-  <div v-if="cart.total">
-    total: {{ priceString(cart.total) }}
+  <div v-if="cart.total" class="total">
+    total <span class="total__price">{{ priceString(cart.total) }}</span>
   </div>
 </template>
 
@@ -11,3 +11,16 @@ import { priceString } from '@/utils'
 // Stores
 const cart = useCartStore()
 </script>
+
+<style lang="scss">
+.total {
+  color: #6D6F73;
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  &__price {
+    font-weight: 700;
+    color: #393A3C;
+  }
+}
+</style>

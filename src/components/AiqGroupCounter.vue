@@ -1,7 +1,13 @@
 <template>
   <div class="group__input">
     <AiqCounter v-model="counter" />
-    <AiqLabel :productLabel="product.label" :productPrice="product.price"  :productOldPrice="product.oldPrice" :productQty="counter" />
+    <AiqLabel
+      :productLabel="product.label"
+      :productPrice="product.price"
+      :productOldPrice="product.oldPrice"
+      :productQty="counter"
+      inputType="counter"  
+    />
   </div>
 </template>
 
@@ -38,8 +44,6 @@ function updateCartItem () {
     cart.updateItem({ ...props.product, qty })
   }
 }
-
-console.log(props.product)
 </script>
 
 <style lang="scss">

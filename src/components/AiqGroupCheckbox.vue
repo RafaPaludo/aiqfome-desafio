@@ -1,7 +1,13 @@
 <template>
   <div class="group__input">
     <AiqCheckbox v-model="checked" :id="product.sku" />
-    <AiqLabel :for="product.sku"  :productLabel="product.label" :productPrice="product.price"  :productOldPrice="product.oldPrice" />
+    <AiqLabel
+      :for="product.sku"
+      :productLabel="product.label"
+      :productPrice="product.price"
+      :productOldPrice="product.oldPrice"
+      inputType="checkbox"
+    />
   </div>
 </template>
 

@@ -2,11 +2,11 @@
   <label
     :for="for"
     class="label"
+    :class="`label__${inputType}`"
   >
+    <span class="checkmark" :class="`checkmark__${inputType}`"></span>
     <div class="label__text">
-      <span v-if="productOldPrice">
-        $
-      </span>
+      <img v-if="productOldPrice" :src="DiscountIcon" alt="Ícone de Desconto">
       <span>
         {{ productLabel }}
       </span>
@@ -27,6 +27,7 @@
 <script setup>
 import { computed } from 'vue'
 import { priceString } from '@/utils'
+import DiscountIcon from '@/assets/imgs/discount-icon.png'
 
 const props = defineProps({
   for: Number,
@@ -34,7 +35,15 @@ const props = defineProps({
   productPrice: Number,
   productOldPrice: Number,
   productQty: Number,
-  productRequired: Boolean
+  productRequired: Boolean,
+  inputType: {
+    type: String,
+    default: 'radio',
+    validator(value) {
+      // The value must match one of these strings
+      return ['radio', 'checkbox', 'text', 'counter'].includes(value)
+    }
+  }
 })
 
 const finalPrice = computed(() => {
@@ -50,14 +59,25 @@ const finalPrice = computed(() => {
 <style lang="scss">
 .label {
   cursor: pointer;
+  position: relative;
   display: flex;
   justify-content: space-between;
   color: #6D6F73;
   flex: 1;
+  align-items: center;
+  padding-left: 2.2rem;
+  line-height: 2.4rem;
+
+  &__counter {
+    cursor: auto;
+  }
 
   &__text {
     font-size: 1.4rem;
     color: #6D6F73;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
   }
 
   &__prices {
@@ -73,6 +93,38 @@ const finalPrice = computed(() => {
     &--discount {
       color: #02A117;
     }
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: .4rem;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: 1px solid #6D6F73;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: .5rem;
+    top: .3rem;
+    width: .3rem;
+    height: .6rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &__counter {
+    display: none;
+  }
+
+  &__checkbox {
+    border-radius: .4rem;
   }
 }
 </style>

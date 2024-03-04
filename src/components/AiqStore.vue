@@ -143,7 +143,7 @@ const product = ref({
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 7.5rem;
     row-gap: 3.5rem;
   }
@@ -154,13 +154,31 @@ const product = ref({
     justify-content: flex-start;
     gap: .8rem;
     align-items: center;
+
+    input {
+      &[type="radio"],
+      &[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      &:checked + label .checkmark {
+        border: none;
+        background-color: #00A296;
+      }
+    }
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   .group {
     padding-left: 0;
     padding-right: 0;
+    
+    &__content {
+      grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    }
   }
 }
 </style>

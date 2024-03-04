@@ -9,7 +9,14 @@
         class="group__input"
       >
         <AiqRadio :id="product.sku" v-model="checked" />
-        <AiqLabel :for="product.sku"  :productLabel="product.label" :productPrice="product.price"  :productOldPrice="product.oldPrice" :productRequired="label.required" />
+        <AiqLabel
+          :for="product.sku"
+          :productLabel="product.label"
+          :productPrice="product.price"
+          :productOldPrice="product.oldPrice"
+          :productRequired="label.required"
+          inputType="radio"
+        />
       </div>
     </div>
   </div>
@@ -58,6 +65,3 @@ function updateCartItem () {
   cart.updateItem( { ...product, qty })
 }
 </script>
-
-<style lang="scss">
-</style>
