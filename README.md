@@ -75,3 +75,27 @@ Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina. Voc
    docker compose up -d 
    
 Você pode acessar a aplicação em http://localhost:5000.
+
+
+---- 
+
+## Testes de componentes com Cypress
+
+## Para rodar os testes em linha de comando:
+
+1. Executar o Cypress em linha de comando:
+   ```bash
+   npm run test:unit
+
+
+## Para rodar os testes em um navegador web:
+
+1. Executar o Cypress em um navegador web:
+   ```bash
+   npm run test:components
+
+2. Clique na opção Component Testing.
+
+3. Escolha um navegador e clique em "Start Component Testing".
+
+4. Clique no nome do componente de test.
