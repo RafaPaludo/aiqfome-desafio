@@ -19,7 +19,7 @@ Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo e
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/RafaPaludo/aiqfome-desafio.git
+   git clone git@github.com:RafaPaludo/aiqfome-desafio.git
    cd aiqfome-desafio
 
 2. Instale as dependências:
@@ -40,7 +40,7 @@ Certifique-se de ter o Docker instalado em sua máquina. Você pode baixá-lo em
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/RafaPaludo/aiqfome-desafio.git
+   git clone git@github.com:RafaPaludo/aiqfome-desafio.git
    cd aiqfome-desafio
 
 3. Faça o build da aplicação:
@@ -61,7 +61,7 @@ Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina. Voc
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/RafaPaludo/aiqfome-desafio.git
+   git clone git@github.com:RafaPaludo/aiqfome-desafio.git
    cd aiqfome-desafio
 
 2. Execute o Docker Compose:
