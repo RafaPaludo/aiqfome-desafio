@@ -22,8 +22,9 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
+// V-model
 const model = defineModel()
 
 // Props

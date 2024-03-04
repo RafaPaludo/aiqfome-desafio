@@ -27,7 +27,7 @@ import { watch, ref } from 'vue'
 import { useCartStore } from '@/stores/cartStore'
 import AiqRadio from "@/ui/AiqRadio.vue"
 import AiqLabel from "@/ui/AiqLabel.vue"
-import AiqGroupHeader from './AiqGroupHeader.vue'
+import AiqGroupHeader from '@/components/AiqGroupHeader.vue'
 
 // Props
 const props = defineProps({
@@ -41,14 +41,14 @@ const checked = ref(null)
 // Store
 const cart = useCartStore()
 
-// Watchers
+// Watcher
 watch(
   checked,
   updateCartItem,
   { deep: true }
 )
 
-// Functions
+// Function
 function updateCartItem () {
   const sku = checked.value
   const product = props.products.find( product => product.sku === sku )

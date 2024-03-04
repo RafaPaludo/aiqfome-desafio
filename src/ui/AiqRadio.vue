@@ -8,10 +8,8 @@
 </template>
 
 <script setup>
-import { ref, watch, inject } from 'vue'
-
-
 const model = defineModel()
+// Props
 const props = defineProps({
   id: Number
 })

@@ -1,6 +1,7 @@
 <template>
   <div class="group__input">
     <AiqCheckbox v-model="checked" :id="product.sku" />
+
     <AiqLabel
       :for="product.sku"
       :productLabel="product.label"
@@ -13,9 +14,9 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { useCartStore } from '@/stores/cartStore'
 import AiqCheckbox from "@/ui/AiqCheckbox.vue"
 import AiqLabel from "@/ui/AiqLabel.vue"
-import { useCartStore } from '@/stores/cartStore'
 
 // Props
 const props = defineProps({
@@ -28,14 +29,14 @@ const checked = ref(false)
 // Store
 const cart = useCartStore()
 
-// Watchers
+// Watcher
 watch(
   checked,
   updateCartItem,
   { deep: true }
 )
 
-// Functions
+// Function
 function updateCartItem () {
   if (checked.value) {
     cart.updateItem({ ...props.product, qty:1 })
@@ -44,7 +45,3 @@ function updateCartItem () {
   }
 }
 </script>
-
-<style lang="scss">
-
-</style>

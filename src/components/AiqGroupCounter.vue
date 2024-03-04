@@ -13,9 +13,9 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { useCartStore } from '@/stores/cartStore'
 import AiqLabel from "@/ui/AiqLabel.vue"
 import AiqCounter from "@/ui/AiqCounter.vue"
-import { useCartStore } from '@/stores/cartStore'
 
 const props = defineProps({
   product: Object
@@ -27,14 +27,14 @@ const counter = ref(0)
 // Stores
 const cart = useCartStore()
 
-// Watchers
+// Watcher
 watch(
   counter,
   updateCartItem,
   { deep: true }
 )
 
-// Functions
+// Function
 function updateCartItem () {
   const qty = counter.value
 
@@ -45,6 +45,3 @@ function updateCartItem () {
   }
 }
 </script>
-
-<style lang="scss">
-</style>

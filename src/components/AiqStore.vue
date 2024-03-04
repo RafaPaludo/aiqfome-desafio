@@ -37,14 +37,14 @@
 
 <script setup>
 import { ref } from 'vue'
-import AiqStoreInfo from "./AiqStoreInfo.vue"
-import AiqProduct from "./AiqProduct.vue"
-import AiqGroupCheckbox from "./AiqGroupCheckbox.vue"
-import AiqGroupRadio from "./AiqGroupRadio.vue"
-import AiqGroupCounter from "./AiqGroupCounter.vue"
-import StoreLogo from '@/assets/imgs/store-logo.png'
-import AiqGroupHeader from './AiqGroupHeader.vue'
 import AiqTextArea from '@/ui/AiqTextArea.vue'
+import StoreLogo from '@/assets/imgs/store-logo.png'
+import AiqStoreInfo from "@/components/AiqStoreInfo.vue"
+import AiqProduct from "@/components/AiqProduct.vue"
+import AiqGroupCheckbox from "@/components/AiqGroupCheckbox.vue"
+import AiqGroupRadio from "@/components/AiqGroupRadio.vue"
+import AiqGroupCounter from "@/components/AiqGroupCounter.vue"
+import AiqGroupHeader from '@/components/AiqGroupHeader.vue'
 
 const checkboxProducts = ref([
   {

@@ -29,6 +29,7 @@ import { computed } from 'vue'
 import { priceString } from '@/utils'
 import DiscountIcon from '@/assets/imgs/discount-icon.png'
 
+// Props
 const props = defineProps({
   for: Number,
   productLabel: String,
@@ -46,6 +47,7 @@ const props = defineProps({
   }
 })
 
+// Computed
 const finalPrice = computed(() => {
   if (props.productQty > 1) {
     return props.productQty * props.productPrice
@@ -53,7 +55,6 @@ const finalPrice = computed(() => {
     return props.productPrice
   }
 })
-
 </script>
 
 <style lang="scss">

@@ -6,6 +6,7 @@
 </template>
 
 <script setup>
+// Data
 const currentYear = new Date().getFullYear()
 </script>
 

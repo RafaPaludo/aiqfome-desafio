@@ -15,10 +15,11 @@
 </template>
 
 <script setup>
+import { priceString } from '@/utils'
 import { useCartStore } from '@/stores/cartStore'
 import { useModalStore } from '@/stores/modalStore'
-import { priceString } from '@/utils'
 
+// Stores
 const cart = useCartStore()
 const modal = useModalStore()
 </script>
@@ -26,9 +27,8 @@ const modal = useModalStore()
 <style lang="scss">
 .modal {
   padding: 5rem;
-  border-radius: 0 0 4rem 4rem;
   color: var(--white);
-  background-color: var(--color-ui-secondary);
+  background-color: var(--color-ui-primary);
 
   &__header {
     font-size: 2.4rem;

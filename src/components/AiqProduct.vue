@@ -17,9 +17,8 @@
             variant="add"
             @click="addProduct"
             v-if="!prductAdd"
-          >
-            Adicionar
-          </AiqButton>
+          >Adicionar</AiqButton>
+
           <AiqCounter
             v-else
             v-model="productQty"
@@ -41,12 +40,12 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import AiqCart from './AiqCart.vue'
-import AiqGroupRadio from "./AiqGroupRadio.vue"
+import { priceString } from '@/utils'
+import { useCartStore } from '@/stores/cartStore'
+import AiqCart from '@/components/AiqCart.vue'
+import AiqGroupRadio from "@/components/AiqGroupRadio.vue"
 import AiqButton from "@/ui/AiqButton.vue"
 import AiqCounter from '@/ui/AiqCounter.vue';
-import { useCartStore } from '@/stores/cartStore'
-import { priceString } from '@/utils'
 import StoreImg from '@/assets/imgs/store-img.png'
 
 // Data
@@ -85,11 +84,13 @@ const props = defineProps({
 const productQty = ref(0)
 const prductAdd = ref(false)
 
+// Watch
 watch(
   productQty,
   handleQty
 )
 
+// Function
 function handleQty (newQty) {
   const id = props.product.id
   const mainProduct = cart.items.find(item => item.id === id)

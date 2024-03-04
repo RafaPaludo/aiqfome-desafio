@@ -23,15 +23,6 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  function updateQuantity ({ id, qty }) {
-    const productIdx = items.value.findIndex(item => item.id === id)
-
-    if (productIdx > -1) {
-      items.value[productIdx].qty = qty
-      console.log(`Produto id: ${id} removido com sucesso!`)
-    }
-  }
-
   function addItem ({ ...args }) {
     const { id, price, qty } = { ...args }
     
@@ -50,5 +41,5 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  return { items, total, addItem, removeItem, updateItem, updateQuantity }
+  return { items, total, addItem, removeItem, updateItem }
 })

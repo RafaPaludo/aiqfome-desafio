@@ -7,13 +7,13 @@
 
     <div
       v-if="label.required"
-      class="badge">
-      obrigatório
-    </div>
+      class="badge"
+    >obrigatório</div>
   </div>
 </template>
 
 <script setup>
+// Props
 const props = defineProps({
   label: Object
 })

@@ -6,12 +6,12 @@
       </div>
   
       <div class="address mobile-hidden">
-        <img :src="Location" alt="Ícone de localização" class="address__icon">
+        <img :src="AiqLocation" alt="Ícone de localização" class="address__icon">
         <div class="address__text">
           entregando em
           <span>
             Rua Mandaguar, 198
-            <img :src="Arrow" alt=">" width="16" height="17"/>
+            <img :src="AiqArrow" alt=">" width="16" height="17"/>
           </span>
         </div>
       </div>
@@ -27,12 +27,12 @@
         variant="ticket"
         @click="modal.toggle"
       >
-        <img :src="Ticket" alt="Ver ticket">
+        <img :src="AiqTicket" alt="Ver ticket">
         ver ticket
       </AiqButton>
 
       <AiqButton variant="login">
-        <img :src="User" alt="Ícone de Usuário">
+        <img :src="AiqUser" alt="Ícone de Usuário">
         entrar
       </AiqButton>
     </div>
@@ -41,14 +41,14 @@
 </template>
 
 <script setup>
-import AiqLogo from '@/assets/imgs/aiq-logo.png'
-import Location from '@/assets/imgs/location-icon.png'
-import User from '@/assets/imgs/user-icon.png'
-import Ticket from '@/assets/imgs/ticket-icon.png'
-import Arrow from '@/assets/imgs/arrow-icon.png'
-import AiqButton from '@/ui/AiqButton.vue'
 import { useCartStore } from '@/stores/cartStore'
 import { useModalStore } from '@/stores/modalStore'
+import AiqButton from '@/ui/AiqButton.vue'
+import AiqLogo from '@/assets/imgs/aiq-logo.png'
+import AiqLocation from '@/assets/imgs/location-icon.png'
+import AiqUser from '@/assets/imgs/user-icon.png'
+import AiqTicket from '@/assets/imgs/ticket-icon.png'
+import AiqArrow from '@/assets/imgs/arrow-icon.png'
 
 // Stores
 const cart = useCartStore()
